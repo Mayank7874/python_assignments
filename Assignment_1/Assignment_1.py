@@ -57,9 +57,6 @@ for i in range(len(angles_deg)):
     print(f"{angles_deg[i]:<10}{angles_rad[i]:<15.4f}{sin_values[i]:<10.4f}{cos_values[i]:<10.4f}{tan_val:<10}")
 
 
-
-
-
 #5 Generate 10 random numbers
 
 for i in range(0,10):
