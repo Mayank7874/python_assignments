@@ -2,6 +2,7 @@
 from datetime import date
 import time
 import random
+import numpy as np
 import hashlib
 import base64
 today=datetime.now()
@@ -39,6 +40,21 @@ print("\n total approx months ",t_mon)
 print("\n total approx year ",t_year)
 
 #4 Display trigonometric table of sin, cos and tan
+angles_deg = np.array([0, 30, 45, 60, 90])
+angles_rad = np.deg2rad(angles_deg)
+sin_values = np.sin(angles_rad)
+cos_values = np.cos(angles_rad)
+tan_values = np.tan(angles_rad)
+print("degrees \t radious \t sin \t cos \t tan")
+print("-" * 55)
+
+for i in range(len(angles_deg)):
+    if angles_deg[i] == 90:
+        tan_val = "Undefined"
+    else:
+        tan_val = f"{tan_values[i]:.4f}"
+        
+    print(f"{angles_deg[i]:<10}{angles_rad[i]:<15.4f}{sin_values[i]:<10.4f}{cos_values[i]:<10.4f}{tan_val:<10}")
 
 
 
@@ -101,7 +117,14 @@ print("\n After encode : ",st)
 #10) Code for String Manipulation 
 
 st="jack of all, master of none"
-print(st[::-1])
+print(st)
+print("reversed",st[::-1])
+print("upper case : ",st.upper())
+print("capitalize : ",st.capitalize())
+print("find 'of' position string : ",st.find("of"))
+print("spllit words",st.split())
+print("replace 'master' with 'blaster' :",st.replace("master","blaster"))
+print("count 'e' : ",st.count('e'))
 
 
 
